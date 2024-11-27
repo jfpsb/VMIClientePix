@@ -84,12 +84,12 @@ namespace VMIClientePix.ViewModel
 
                         daoCobranca = new DAOCobranca(session);
 
-                        timerExpiracaoQrCode = new System.Timers.Timer(1000);
+                        timerExpiracaoQrCode = new Timer(1000);
                         timerExpiracaoQrCode.Elapsed += TimerExpiracaoQrCode_Elapsed;
                         timerExpiracaoQrCode.AutoReset = true;
                         timerExpiracaoQrCode.Enabled = true;
 
-                        timerConsultaCobranca = new System.Timers.Timer(5000);
+                        timerConsultaCobranca = new Timer(5000);
                         timerConsultaCobranca.Elapsed += TimerConsultaCobranca_Elapsed;
                         timerConsultaCobranca.AutoReset = true;
                         timerConsultaCobranca.Enabled = true;
@@ -220,8 +220,8 @@ namespace VMIClientePix.ViewModel
 
                     Cobranca.Revisao = cobranca.Revisao;
                     Cobranca.Location = cobranca.Location;
-
                     Cobranca.Pix.Clear();
+
                     foreach (var p in cobranca.Pix)
                     {
                         p.Cobranca = Cobranca;

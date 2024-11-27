@@ -4,15 +4,12 @@ using Newtonsoft.Json.Linq;
 using NHibernate;
 using System;
 using System.Globalization;
-using System.IO;
-using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 using VMIClientePix.BancoDeDados.ConnectionFactory;
 using VMIClientePix.Model;
 using VMIClientePix.Model.DAO;
 using VMIClientePix.Util;
-using VMIClientePix.View;
 using VMIClientePix.View.Interfaces;
 using VMIClientePix.ViewModel.Interfaces;
 using VMIClientePix.ViewModel.Services.Concretos;
@@ -57,7 +54,7 @@ namespace VMIClientePix.ViewModel
 
             if (ValorPix == 0.0)
             {
-                messageBoxService.Show("Valor De Cobrança Pix Não Pode Ser Zero!", "Informe O Valor Do Pix", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                messageBoxService.Show("Informe um valor acima de zero", "Informe o valor do pix", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 _botaoEnabled = true;
                 return;
             }
